@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{--bg:#fff;--surface:#f4f4f5;--surface2:#e9e9eb;--text:#111113;--muted:#6e6e76;--inv:#111113;--inv-text:#fff;
+--h0:#ececee;--h1:#d2d2d6;--h2:#a3a3aa;--h3:#5f5f67;--h4:#111113}
+:root.dark{--bg:#0a0a0b;--surface:#141416;--surface2:#1e1e21;--text:#f4f4f5;--muted:#8e8e96;--inv:#f4f4f5;--inv-text:#0a0a0b;
+--h0:#18181b;--h1:#2c2c31;--h2:#56565e;--h3:#9a9aa3;--h4:#f4f4f5;color-scheme:dark}
+/* desktop-only app shell: the page itself never scrolls */
+html,body,#root{height:100%;overflow:hidden}
+body{min-width:1024px;@apply bg-bg text-ink font-sans antialiased;transition:background .3s,color .3s}
+/* hide scrollbars everywhere (scrolling still works) */
+*{scrollbar-width:none;-ms-overflow-style:none}
+*::-webkit-scrollbar{display:none;width:0;height:0}
+::selection{background:var(--inv);color:var(--inv-text)}
+:focus-visible{outline:2px solid var(--text);outline-offset:3px;border-radius:8px}
+@keyframes pulse-dot{50%{opacity:.2}}
+.pulse-dot{animation:pulse-dot 2s ease-in-out 3}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
